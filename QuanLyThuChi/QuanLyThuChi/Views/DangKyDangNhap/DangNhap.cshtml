@@ -1,0 +1,38 @@
+﻿@using QuanLyThuChi.Models;
+@model Userrr
+@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .txtTaiKhoan {
+        border-width: 0 0 1px 0;
+        border-color: black;
+    }
+
+    .txtMatKhau {
+        border-color: black;
+        border-width: 0 0 1px 0;
+    }
+    .thanhmenu{
+        display:none;
+    }
+</style>
+
+<h2 style="text-align:center">Đăng Nhập</h2>
+<div style="text-align:center;color:red;">@ViewBag.ThongBao</div>
+<div style="border:1px solid gray;padding:10px;">
+@using (Html.BeginForm())
+{
+    <div style="text-align:center">
+        <span>Tài khoản</span>
+        @Html.TextBox("txtTaiKhoan", "", htmlAttributes: new { @class = "txtTaiKhoan", @placeholder = "Your Account" })<br />
+        <br />
+        <span>Mật khẩu</span>
+        @Html.Password("txtMatKhau", "", htmlAttributes: new { @class = "txtMatKhau", @placeholder = "Password" })
+        <br /><br />
+        <input type="submit" value="Đăng nhập" />
+    </div>
+}
+</div>
+

@@ -1,0 +1,55 @@
+﻿
+
+@model IEnumerable<QuanLyThuChi.Models.ThuChiii>
+
+@{
+    ViewBag.Title = "Tiền Thu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tiền Thu</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().LyDo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().TenMuc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().SoTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ThuChi)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LyDo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenMuc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThuChi)
+            </td>
+
+        </tr>
+    }
+    
+</table>

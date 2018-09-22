@@ -1,0 +1,58 @@
+﻿@model QuanLyThuChi.Models.ThuChiii
+
+@{
+    ViewBag.Title = "Chi Tiết";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hiển Thị Chi Tiết</h2>
+
+<div style="border:1px solid black">
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LyDo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LyDo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenMuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoTien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThuChi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThuChi)
+        </dd>
+
+    </dl>
+</div>
+<p style="text-align:center">
+    @Html.ActionLink("Quay Về", "QuanLyThuChiii")
+</p>

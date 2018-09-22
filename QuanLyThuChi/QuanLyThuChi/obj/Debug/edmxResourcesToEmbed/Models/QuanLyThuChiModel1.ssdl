@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyThuChiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MucChi">
+    <Key>
+      <PropertyRef Name="MaMuc" />
+    </Key>
+    <Property Name="MaMuc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenMuc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="ThongTinChiTien">
+    <Key>
+      <PropertyRef Name="STT" />
+    </Key>
+    <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="100" />
+    <Property Name="TenMuc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="date" />
+    <Property Name="SoTienChi" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ThongTinThuTien">
+    <Key>
+      <PropertyRef Name="STT" />
+    </Key>
+    <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LyDoThu" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date" Type="date" />
+    <Property Name="SoTienThu" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ThuChiii">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="100" />
+    <Property Name="TenMuc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="date" />
+    <Property Name="SoTien" Type="int" />
+    <Property Name="ThuChi" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Userrr">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="Cmnd" Type="nvarchar" MaxLength="20" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="20" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="GhiChu" Type="nvarchar(max)" />
+    <Property Name="TaiKhoan" Type="nvarchar" MaxLength="20" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityContainer Name="QuanLyThuChiModelStoreContainer">
+    <EntitySet Name="MucChi" EntityType="Self.MucChi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThongTinChiTien" EntityType="Self.ThongTinChiTien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThongTinThuTien" EntityType="Self.ThongTinThuTien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThuChiii" EntityType="Self.ThuChiii" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Userrr" EntityType="Self.Userrr" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,16 @@
+﻿@using QuanLyThuChi.Models;
+@model List<MucChi>
+
+@{
+    ViewBag.Title = "Tìm Thu Chi Theo Mục";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3 style="color:sienna;text-align:center">Quản Lý Thu Chi Theo Mục</h3>
+@foreach(var item in Model)
+{
+    
+<div style="padding:20px;text-align:center">
+    <a href="@Url.Action("ChiTheoMuc","ChiTheoMuc",new { @TenMuc=item.TenMuc})">@item.TenMuc</a><br />
+</div>
+}
+
